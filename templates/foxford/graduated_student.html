@@ -1,0 +1,52 @@
+{% extends 'foxford/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student.name }} - Graduated Student Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .student-image {
+            max-height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .student-detail {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+{% block content %}
+
+
+<body>
+    <div class="container">
+        <div class="student-detail card mt-5">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ student.image.url }}" class="card-img student-image" alt="{{ student.name }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ student.name }}</h2>
+                        <p class="card-text"><strong>About:</strong> {{ student.about }}</p>
+                        <p class="card-text"><strong>Graduation Year:</strong> {{ student.graduation_year }}</p>
+                        <p class="card-text"><strong>IELTS Band Score:</strong> {{ student.band_score }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{% extends 'foxford/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">About</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">About</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+<div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                        <h1>Innovative Way To Learn</h1>
+                    </div>
+                    <p>Foxford Education Center 2017 yilda Valiev Abdulaziz Sobirjon o'g'li tomonidan asos solingan. Markazimizning asosiy maqsadi ilm ulashish va shu yo'l bilan jamiyat foydasiga hissa qo'shishdir. O'zimizning yuqori malakali o'qituvchilarimiz va zamonaviy ta'lim usullari bilan ta'lim berishni maqsad qilganmiz..
+                    </p>
+                    <div class="info-container">
+    <div class="info-item">
+        <i class="fa fa-graduation-cap"></i> <strong>FoxFord | Education Centre</strong>
+    </div>
+    <div class="info-item">
+        <i class="fa fa-book"></i> <strong>Education</strong>
+    </div>
+    <div class="info-item">
+        <i class="fa fa-calendar-alt"></i> 7 yillik tajriba
+    </div>
+    <div class="info-item">
+        <i class="fa fa-users"></i> 3200+ o'quvchi
+    </div>
+    <div class="info-item">
+        <i class="fa fa-certificate"></i> IELTS 8
+    </div>
+   <div class="info-item">
+    <i class="fa fa-university"></i> Bitirgan o'quvchilar hozirda Top universitetlarda
+    <div class="flags">
+        <span class="flag-icon flag-icon-us"></span> <!-- USA -->
+        <span class="flag-icon flag-icon-sg"></span> <!-- Singapore -->
+        <span class="flag-icon flag-icon-kr"></span> <!-- South Korea -->
+        <span class="flag-icon flag-icon-de"></span> <!-- Germany -->
+        <span class="flag-icon flag-icon-au"></span> <!-- Australia -->
+        <span class="flag-icon flag-icon-uz"></span> <!-- Uzbekistan -->
+    </div>
+</div>
+    <div class="info-item">
+        <i class="fa fa-phone"></i> Ma'lumot uchun: <a href="tel:+998943066003">+998943066003</a>
+    </div>
+</div>
+{#                    <a href="{% url 'about_page' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn#}
+{#                        More</a>#}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

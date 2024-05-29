@@ -1,0 +1,116 @@
+{% extends 'foxford/base.html' %}
+{% load static %}
+<style>
+.instructor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.instructor-table th, .instructor-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.instructor-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.instructor-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.instructor-name {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.instructor-bio {
+    color: #666;
+    vertical-align: middle;
+}
+
+.instructor-row {
+    border-bottom: 1px solid #ddd;
+}
+</style>
+{% block content %}
+<div class="course-container">
+    <div class="course-header">
+        <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image">
+        <h1 class="course-title">{{ course.title }}</h1>
+        <p class="course-description">{{ course.description }}</p>
+    </div>
+    <section class="course-details">
+        <h2>What You'll Learn</h2>
+        <ul>
+            <!-- Assuming you have a list of learning outcomes stored in a field called learning_outcomes -->
+            {% for outcome in course.learning_outcomes.splitlines %}
+                <li>{{ outcome }}</li>
+            {% endfor %}
+        </ul>
+{#        <h2>Instructors</h2>#}
+{#        <div class="instructor">#}
+{#            <img src="{{ course.instructor.image.url }}" alt="{{ course.instructor.name }}" class="instructor-photo">#}
+{#            <div class="instructor-info">#}
+{#                <h3>{{ course.instructor.name }}</h3>#}
+{#                <p>{{ course.instructor.bio }}</p>#}
+{#            </div>#}
+{#        </div>#}
+    <div class="instructors">
+    <h2>Our Instructors</h2>
+
+    <table class="instructor-table">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Bio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr class="instructor-row">
+                <td><img src="{{ teacher.image.url }}" alt="{{ teacher.name }}" class="instructor-photo"></td>
+                <td class="instructor-name">{{ teacher.name }}</td>
+                <td class="instructor-bio">{{ teacher.bio }}</td>
+            </tr>
+            {% if not forloop.last %}
+            <tr>
+                <td colspan="3"><hr></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+        <h2>Course Schedule</h2>
+        <table class="course-schedule">
+            <thead>
+                <tr>
+                    <th>Start time</th>
+                    <th>Topic</th>
+                    <th>End time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in course.schedules.all %}
+                    <tr>
+                        <td>{{ session.start_time }}</td>
+                        <td>{{ session.topic }}</td>
+                        <td>{{ session.end_time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+</div>
+{% endblock %}

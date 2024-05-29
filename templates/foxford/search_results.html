@@ -1,0 +1,27 @@
+{% extends "foxford/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2>Search Results for "{{ query }}"</h2>
+    <div class="row pb-3">
+        {% for blog in blogs %}
+        <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card rounded overflow-hidden mb-2 flex-fill">
+                <a href="{% url 'blog_detail' blog.pk %}"><img style="width: 150%; height: 250px; object-fit: cover;" src="{{ blog.image.url }}" alt=""></a>
+                <div class="bg-secondary p-4 d-flex flex-column">
+                    <div class="d-flex justify-content-between mb-3">
+                        <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ blog.author.username }}</small>
+                    </div>
+                    <p><a style="color: black" href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></p>
+                    <div class="border-top mt-4 pt-4 mt-auto">
+                        <div class="d-flex justify-content-between">
+                            <hp>{{ blog.publish_time|date:"F d, Y" }}</hp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

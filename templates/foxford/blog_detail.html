@@ -1,0 +1,30 @@
+{% extends 'foxford/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- blog_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ blog.title }}</h1>
+        <p><small>By {{ blog.author.username }} on {{ blog.publish_time|date:"F d, Y" }}</small></p>
+        {% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="img-fluid mb-4">
+        {% endif %}
+        <div>{{ blog.content }}</div>
+        <a class="btn btn-primary mt-4" href="{% url 'blog_page' %}">Back to Blog List</a>
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}

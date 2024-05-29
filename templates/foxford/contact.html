@@ -1,0 +1,58 @@
+
+{% extends 'foxford/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Include Font Awesome 5 from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .telegram-channel, .contact-info {
+            margin: 50px 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .contact-info h4 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #0088cc; /* Telegram's brand color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #005f8c;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+    </style>
+
+    <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+998943066003">+998943066003</a></p>
+        <p><i class="fas fa-phone"></i> Administrator Phone: <a href="tel:+998999771132">+998999771132</a></p>
+        <p><i class="fab fa-telegram-plane"></i> Administrator Telegram: <a href="https://t.me/JosephVLY"
+                                                                            target="_blank" class="telegram-link">Admin_Telegram</a>
+        </p>
+        <p><i class="fas fa-envelope"></i>Email: <a href="mailto:foxfordeducation2017@gmail.com">foxfordeducation2017@gmail.com</a>
+        </p>
+        <p><i class="fas fa-map-marker-alt"></i>Location: <a href="https://maps.app.goo.gl/CEBq7Gm6XRWF9vXs8" target="_blank">Namangan
+            Yangiqo'rg'on Amir Temur koʻchasi 3 uy</a></p>
+    </div>
+
+    <div class="telegram-channel">
+        <center>
+            <h4>Our Telegram Channel: <a href="https://t.me/Foxford_time" target="_blank" class="telegram-link"><i
+                    class="fab fa-telegram-plane" style="font-size:20px"></i> English Unlocked</a></h4>
+        </center>
+    </div>
+
+{% endblock %}
